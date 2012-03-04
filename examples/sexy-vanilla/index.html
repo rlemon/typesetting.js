@@ -4,152 +4,88 @@
 	<meta charset="utf-8">
 	<title>Sexy Vanilla - vlettering.js demo</title>
 	<style type="text/css" media="all">
-		@font-face
-		{
-			font-family: 'Lobster';
-			font-style: normal;
-			font-weight: normal;
-			src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v5/MWVf-Rwh4GLQVBEwbyI61Q.woff') format('woff');
+		@font-face {
+		  font-family: 'Lobster';
+		  font-style: normal;
+		  font-weight: normal;
+		  src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v5/MWVf-Rwh4GLQVBEwbyI61Q.woff') format('woff');
 		}
-		*
-		{
-			outline: 0;
+
+		* { outline:0; }
+
+		body, html {
+			height:100%;
+			margin:0;
+			padding:0;
 		}
-		body, html
-		{
-			height: 100%;
-			margin: 0;
-			padding: 0;
+
+		body { 
+			background:#7f928a;
+			background:-moz-radial-gradient(center, #7f928a, #45504b);
+			background:-webkit-gradient(radial, center center, 120, center center, 800, from(#7f928a), to(#45504b));
 		}
-		body
-		{
-			background: #7f928a;
-			background: -moz-radial-gradient(center, #7f928a, #45504b);
-			background: -webkit-gradient(radial, center center, 120, center center, 800, from(#7f928a), to(#45504b));
+
+		#content { 
+			text-align:center;
+			width:600px;
+			height:400px;
+			margin:0 auto;
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-300px; 
+			margin-top:-200px; 
+			color:#eee;
 		}
-		#content
-		{
-			color: #eee;
-			height: 400px;
-			left: 50%;
-			margin: 0 auto;
-			margin-left: -300px;
-			margin-top: -200px;
-			position: absolute;
-			text-align: center;
-			top: 50%;
-			width: 600px;
+
+		h1 { 
+			font:60px "Lobster", serif;
+			text-shadow:#666 4px 4px 0;
 		}
-		h1
-		{
-			font: 60px "Lobster", serif;
-			text-shadow: #666 4px 4px 0;
+
+
+		h1 span { 
+			display:inline-block;
+			position:relative;   
+			-webkit-transition:all 0.2s ease-out;
 		}
-		h1 span
-		{
-			display: inline-block;
-			position: relative;
-			webkit-transition: all 0.2s ease-out;
+
+		h1 span:hover {
+			-moz-transform:scale(1.1);
+			-webkit-transform:scale(1.1); 
 		}
-		h1 span:hover
-		{
-			moz-transform: scale(1.1);
-			webkit-transform: scale(1.1);
+
+		h1 {
+			-moz-transform:skewX(-15deg);
+			-webkit-transform:skewX(-15deg); 
 		}
-		h1.slanted
-		{
-			moz-transform: skewX(-15deg);
-			webkit-transform: skewX(-15deg);
+		h1.sexy {
+			-moz-transform:skewX(-7deg);
+			-webkit-transform:skewX(-7deg); 
 		}
-		.char1
-		{
-			font-size: 120px;
-			left: -10px;
-			position: relative;
-			top: 10px;
-		}
-		.char2
-		{
-			left: -8px;
-			position: relative;
-			top: -15px;
-		}
-		.char3
-		{
-			left: -6px;
-			position: relative;
-			top: -20px;
-		}
-		.char4
-		{
-			left: -4px;
-			position: relative;
-			top: -25px;
-		}
-		.char5
-		{
-			left: -2px;
-			position: relative;
-			top: -30px;
-		}
-		.char6
-		{
-			font-size: 120px;
-		}
-		.char7
-		{
-			left: 0px;
-			position: relative;
-			top: -15px;
-		}
-		.char8
-		{
-			left: 4px;
-			position: relativeS;
-			top: -20px;
-		}
-		.char9
-		{
-			left: 6px;
-			position: relative;
-			top: -25px;
-		}
-		.char10
-		{
-			left: 8px;
-			position: relative;
-			top: -30px;
-		}
-		.char11
-		{
-			left: 12px;
-			position: relative;
-			top: -35px;
-		}
-		.char12
-		{
-			left: 14px;
-			position: relative;
-			top: -40px;
-		}
-		.char13
-		{
-			left: 20px;
-			position: relative;
-			top: -48px;
-		}
-		.char14
-		{
-			left: 24px;
-			position: relative;
-			top: -56px;
-		}
+
+
+		.char1 { font-size:120px; position:relative; top:10px; left:-10px; }
+		.char2 { position:relative; top:-15px; left:-8px; }
+		.char3 { position:relative; top:-20px; left:-6px; }
+		.char4 { position:relative; top:-25px; left:-4px; }
+		.char5 { position:relative; top:-30px; left:-2px; }
+		.char6 { font-size:120px; }
+		.char7 { position:relative; top:-15px; left:0px; }
+		.char8 { position:relativeS; top:-20px; left:4px; }
+		.char9 { position:relative; top:-25px; left:6px; }
+		.char10 { position:relative; top:-30px; left:8px; }
+		.char11 { position:relative; top:-35px; left:12px; }
+		.char12 { position:relative; top:-40px; left:14px; }
+		.char13 { position:relative; top:-48px; left:20px; }
+		.char14 { position:relative; top:-56px; left:24px; }
+		​
 	</style>
 </head>
 <body>
 	<div id="content">
 		<h1 class="sexy">Sexy Vanilla!</h1>
-		<h1 class="slanted">Lettering.js</h1>
+		<h1>Lettering.js</h1>
 	</div>​
 	<script type="text/javascript" src="http://rlemon.com/public_files/Sizzle.js"></script>
 	<script type="text/javascript">
@@ -209,7 +145,6 @@
 	})();
 
 	vlettering.letters('.sexy');
-	vlettering.words('.slanted');
 	
 	</script>
 </body>
