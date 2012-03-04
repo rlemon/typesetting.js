@@ -61,5 +61,3 @@ var vlettering = (function() {
     };
     return vlettering;
 })();
-
-​

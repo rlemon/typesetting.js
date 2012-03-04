@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sexy Vanilla - vlettering.js demo</title>
+	<style type="text/css" media="all">
+		@font-face
+		{
+			font-family: 'Lobster';
+			font-style: normal;
+			font-weight: normal;
+			src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v5/MWVf-Rwh4GLQVBEwbyI61Q.woff') format('woff');
+		}
+		*
+		{
+			outline: 0;
+		}
+		body, html
+		{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		body
+		{
+			background: #7f928a;
+			background: -moz-radial-gradient(center, #7f928a, #45504b);
+			background: -webkit-gradient(radial, center center, 120, center center, 800, from(#7f928a), to(#45504b));
+		}
+		#content
+		{
+			color: #eee;
+			height: 400px;
+			left: 50%;
+			margin: 0 auto;
+			margin-left: -300px;
+			margin-top: -200px;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			width: 600px;
+		}
+		h1
+		{
+			font: 60px "Lobster", serif;
+			text-shadow: #666 4px 4px 0;
+		}
+		h1 span
+		{
+			display: inline-block;
+			position: relative;
+			webkit-transition: all 0.2s ease-out;
+		}
+		h1 span:hover
+		{
+			moz-transform: scale(1.1);
+			webkit-transform: scale(1.1);
+		}
+		h1.slanted
+		{
+			moz-transform: skewX(-15deg);
+			webkit-transform: skewX(-15deg);
+		}
+		.char1
+		{
+			font-size: 120px;
+			left: -10px;
+			position: relative;
+			top: 10px;
+		}
+		.char2
+		{
+			left: -8px;
+			position: relative;
+			top: -15px;
+		}
+		.char3
+		{
+			left: -6px;
+			position: relative;
+			top: -20px;
+		}
+		.char4
+		{
+			left: -4px;
+			position: relative;
+			top: -25px;
+		}
+		.char5
+		{
+			left: -2px;
+			position: relative;
+			top: -30px;
+		}
+		.char6
+		{
+			font-size: 120px;
+		}
+		.char7
+		{
+			left: 0px;
+			position: relative;
+			top: -15px;
+		}
+		.char8
+		{
+			left: 4px;
+			position: relativeS;
+			top: -20px;
+		}
+		.char9
+		{
+			left: 6px;
+			position: relative;
+			top: -25px;
+		}
+		.char10
+		{
+			left: 8px;
+			position: relative;
+			top: -30px;
+		}
+		.char11
+		{
+			left: 12px;
+			position: relative;
+			top: -35px;
+		}
+		.char12
+		{
+			left: 14px;
+			position: relative;
+			top: -40px;
+		}
+		.char13
+		{
+			left: 20px;
+			position: relative;
+			top: -48px;
+		}
+		.char14
+		{
+			left: 24px;
+			position: relative;
+			top: -56px;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1 class="sexy">Sexy Vanilla!</h1>
+		<h1 class="slanted">Lettering.js</h1>
+	</div>​
+	<script type="text/javascript" src="http://rlemon.com/public_files/Sizzle.js"></script>
+	<script type="text/javascript">
+	
+	var vlettering = (function() {
+
+		function injector(t, splitter, klass, after) {
+			var a = (t.innerText || t.textContent),
+				inject = '';
+			a = a.split(splitter);
+			if (a.length) {
+				a.forEach(function(item, i) {
+					inject += '<span class="' + klass + (i + 1) + '">' + item + '</span>' + after;
+				});
+				t.innerHTML = inject; 
+			}
+		}
+
+		function replaceNodeWith(element, search, replace) {
+			var elements = element.childNodes;
+			for (var i = 0, l = elements.length; i < l; i++) {
+				if (elements[i].tagName === search) {
+					element.replaceChild(document.createTextNode(replace), elements[i]);
+				}
+			}
+		}
+
+		var vlettering = {
+			letters: function(queryString, context) {
+				context = context || document;
+				var elements = Sizzle(queryString, context);
+				elements.forEach(function(item) {
+					injector(item, '', 'char', '');
+				});
+				return elements;
+			},
+			lines: function(queryString, context) {
+				context = context || document;
+				var elements = Sizzle(queryString, context);
+				elements.forEach(function(item) {
+					var r = "eefec303079ad17405c889e092e105b0";
+					replaceNodeWith(item, 'BR', r);
+					injector(item, r, 'line', '');
+				});
+				return elements;
+			},
+			words: function(queryString, context) {
+				context = context || document;
+				var elements = Sizzle(queryString, context);
+				elements.forEach(function(item) {
+					injector(item, ' ', 'word', ' ');
+				});
+				return elements;
+			}
+		};
+		return vlettering;
+	})();
+
+	vlettering.letters('.sexy');
+	vlettering.words('.slanted');
+	
+	</script>
+</body>
+</html>
