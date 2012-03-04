@@ -6,7 +6,7 @@
  * 		@version: 1.1
  * 
  * * Requires Sizzle selector library
- * 
+ * * http://rlemon.com/public_files/Sizzle.js (not the fastest host around)
  * */
 var vlettering = (function() {
 
