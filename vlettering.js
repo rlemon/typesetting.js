@@ -1,11 +1,16 @@
 /*
- * Requires Sizzle selector library
+ * vlettering.js
+ * 
+ * 		@title: Vanilla lettering.js
+ * 		@author: Robert Lemon
+ * 		@version: 1.1
+ * 
+ * * Requires Sizzle selector library
  * 
  * */
 var vlettering = (function() {
 
     function injector(t, splitter, klass, after) {
-        console.log(t);
         var a = (t.innerText || t.textContent),
             inject = '';
         a = a.split(splitter);
@@ -13,19 +18,20 @@ var vlettering = (function() {
             a.forEach(function(item, i) {
                 inject += '<span class="' + klass + (i + 1) + '">' + item + '</span>' + after;
             });
-            t.innerHTML = inject; // I can do better than this!
+            t.innerHTML = inject; 
         }
     }
 
     function replaceNodeWith(element, search, replace) {
-        element.children.forEach(function(item) {
-            if (item.nodeType === search) {
-                item.parentNode.replaceChild(replace, item)
+        var elements = element.childNodes;
+        for (var i = 0, l = elements.length; i < l; i++) {
+            if (elements[i].tagName === search) {
+                element.replaceChild(document.createTextNode(replace), elements[i]);
             }
-        });
+        }
     }
 
-    var lettering = {
+    var vlettering = {
         letters: function(queryString, context) {
             context = context || document;
             var elements = Sizzle(queryString, context);
@@ -39,10 +45,6 @@ var vlettering = (function() {
             var elements = Sizzle(queryString, context);
             elements.forEach(function(item) {
                 var r = "eefec303079ad17405c889e092e105b0";
-                // Because it's hard to split a <br/> tag consistently across browsers,
-                // (*ahem* IE *ahem*), we replaces all <br/> instances with an md5 hash 
-                // (of the word "split").  If you're trying to use this plugin on that 
-                // md5 hash string, it will fail because you're being ridiculous.
                 replaceNodeWith(item, 'BR', r);
                 injector(item, r, 'line', '');
             });
@@ -57,5 +59,7 @@ var vlettering = (function() {
             return elements;
         }
     };
-    return lettering;
+    return vlettering;
 })();
+
+​
