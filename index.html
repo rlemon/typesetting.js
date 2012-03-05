@@ -14,10 +14,46 @@
       }
 </style>
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+
 <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=Allerta+Stencil);
+
+​.v-logo {
+    margin: 1em 0;
+    position: relative;
+    display: inline-block;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: 400;
+    border: 2px solid #444;
+    background-color: #f00;
+}
+
+​.v-logo span {
+    display: inline-block;
+    height: 1.25em;
+    width: 1em;
+    line-height: 1.1em;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+.v-logo:hover .char2, .v-logo:hover .char3, .v-logo:hover .char4, .v-logo:hover .char5, .v-logo:hover .char6, .v-logo:hover .char7, .v-logo:hover .char13 {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    color: #000;
+}
+.v-logo:hover .char1, .v-logo:hover .char8, .v-logo:hover .char9, .v-logo:hover .char10, .v-logo:hover .char11, .v-logo:hover .char12 {
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    width: 0.02em;
+}​
+
+</style>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -42,7 +78,7 @@
 </div>
 <div class="container">
 	<div class="hero-unit">
-		<h1>vlettering.js</h1>
+		<h1 class="v-logo">vlettering.js</h1>
 		<p>
 			A Javascript library for radical web typography!
 		</p>
@@ -96,5 +132,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Sizzle.js"></script>
 <script src="js/vlettering.js"></script>
+<script>
+	vlettering.letters('.v-logo');
+</script>
 </body>
 </html>
