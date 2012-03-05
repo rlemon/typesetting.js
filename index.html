@@ -8,10 +8,78 @@
 <meta name="author" content="">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
-      body {
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monoton'), local('Monoton-Regular'), url('http://themes.googleusercontent.com/static/fonts/monoton/v3/AKI-lyzyNHXByGHeOcds_w.woff') format('woff');
+}
+
+body {
         padding-top: 60px;
         padding-bottom: 40px;
-      }
+}
+.banner {
+	position: relative;
+}
+#logo {
+	display: block;
+	min-width: 900px;
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #d7ceb2;
+    text-shadow: 3px 3px 0px #282a33, 5px 5px 0px #464959;
+    letter-spacing: 10px;
+    background-color: #525668;
+    padding: 1em 0;
+    border: 6px solid #aaa;
+}
+#logo span {
+    -webkit-transition: all 0.3s ease-out;
+	display: inline-block;
+}
+.banner img {
+	-webkit-transition: all 0.6s ease-out 0.33s;
+	opacity: 0;
+}
+
+.banner:hover .char10, .banner:hover .char13 {
+    letter-spacing: 0;
+}
+.banner:hover .char11 {
+    -moz-transform: scale(1.5) rotate(720deg);
+    -webkit-transform: scale(1.5) rotate(720deg);
+    margin: 0 20px 0 25px;
+}
+.banner:hover .char1, .banner:hover .char7, .banner:hover .char8 {
+    -moz-transform: scale(1.2) translateY(-0.1em);
+    -webkit-transform: scale(1.2) translateY(-0.1em);
+}
+.banner:hover .char6 {
+    -moz-transform: rotate(-9deg) translateY(0.05em);
+    -webkit-transform: rotate(-9deg) translateY(0.05em);
+}
+.banner:hover .char4 {
+    -moz-transform: rotate(12deg) translateY(0.15em);
+    -webkit-transform: rotate(12deg) translateY(0.15em);
+}
+.banner:hover .char3, .banner:hover .char5, .banner:hover .char10 {
+    -moz-transform: translateY(0.15em);
+    -webkit-transform: translateY(0.15em);
+}
+.banner:hover .char2, .banner:hover .char9 {
+    -moz-transform: translateY(-0.1em);
+    -webkit-transform: translateY(-0.1em);
+}
+.banner:hover img {
+	opacity: 1;
+}
+.banner:hover .char1, .banner:hover .char3, .banner:hover .char4, .banner:hover .char5, .banner:hover .char7, .banner:hover .char8, .banner:hover .char11, .banner:hover .char13 {
+     color: #d6a40e;   
+}
+​
 </style>
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 
@@ -43,12 +111,15 @@
 </div>
 <div class="container">
 	<div class="hero-unit">
-		<h1><a href="http://github.com/rlemon/typesetting.js" class="v-logo">typesetting.js</a></h1>
+		<h1 class="banner"><a href="http://github.com/rlemon/typesetting.js"><span id="logo">typesetting.js</span>
+		<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/ce742187c818c67d98af16f96ed21c00160c234a/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
+		</a></h1>
+		<br />
 		<p>
 			A Javascript library for radical web typography!
 		</p>
 		<p>
-			Typography on the web is becoming more of a focus with newer technologies arising (new devices, CSS3, HTML5). There have been attempts to circumvent a lack of down-to-the-letter control, but all are lacking key options and require large third-party libraries or scripts to run. This was the reasoning for creating <abbr title="Vanilla Lettering.js">vlettering.js</abbr>, a light-weight, cross-browser, standalone javascript library that exposes web typography like it has never been before!
+			Type Setting is exploding all over the web but CSS currently doesn't offer complete down-to-the-letter control. So we created a light-weight javascript library to give you that control...
 		</p>
 		<p>
 			<a class="btn btn-primary btn-large">Learn more &raquo;</a>
@@ -101,11 +172,9 @@
 			<p>
 				Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 			</p>
-			<pre class="prettyprint linenums">
-	typesetting.letter('.title');
-	typesetting.words('.menu');
-	typesetting.lines('.paragraph');
-			</pre>
+			<pre>typesetting.letter('.title');
+typesetting.words('.menu');
+typesetting.lines('.paragraph');</pre>
 		</div>
 	</div>
 	<hr>
@@ -120,7 +189,7 @@
 <script src="js/Sizzle.js"></script>
 <script src="js/typesetting.js"></script>
 <script>
-	typesetting.letters('.v-logo');
+	typesetting.letters('#logo');
 </script>
 </body>
 </html>
