@@ -1,14 +1,13 @@
 /*
- * vlettering.js
+ * @filename    typesetting.js
+ * @author      Robert Lemon
+ * @version     1.0
+ * @modified    2012/03/05
+ * @url         http://rlemon.github.com/typesetting.js/
+ * @email       rob.lemon@gmail.com
  * 
- * 		@title: Vanilla lettering.js
- * 		@author: Robert Lemon
- * 		@version: 1.1
- * 
- * * Requires Sizzle selector library
- * * http://rlemon.com/public_files/Sizzle.js (not the fastest host around)
  * */
-var vlettering = (function() {
+var typesetting = (function() {
 
     function injector(t, splitter, klass, after) {
         var a = (t.innerText || t.textContent),
@@ -31,7 +30,7 @@ var vlettering = (function() {
         }
     }
 
-    var vlettering = {
+    var typesetting = {
         letters: function(queryString, context) {
             context = context || document;
             var elements = Sizzle(queryString, context);
@@ -59,5 +58,7 @@ var vlettering = (function() {
             return elements;
         }
     };
-    return vlettering;
+    
+    return typesetting;
+    
 })();
