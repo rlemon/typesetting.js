@@ -23,7 +23,12 @@
 
 @import url(http://fonts.googleapis.com/css?family=Allerta+Stencil);
 
-​.v-logo {
+a.v-logo {
+    color: inherit;
+    text-decoration: none;    
+}
+
+.v-logo {
     margin: 1em 0;
     position: relative;
     display: inline-block;
@@ -33,7 +38,7 @@
     background-color: #f00;
 }
 
-​.v-logo span {
+.v-logo span {
     display: inline-block;
     height: 1.25em;
     width: 1em;
@@ -45,13 +50,33 @@
 .v-logo:hover .char2, .v-logo:hover .char3, .v-logo:hover .char4, .v-logo:hover .char5, .v-logo:hover .char6, .v-logo:hover .char7, .v-logo:hover .char13 {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
+    width: 0.6em;
     color: #000;
+    cursor: hover;
 }
 .v-logo:hover .char1, .v-logo:hover .char8, .v-logo:hover .char9, .v-logo:hover .char10, .v-logo:hover .char11, .v-logo:hover .char12 {
     -moz-transform: scale(0);
     -webkit-transform: scale(0);
     width: 0.02em;
-}​
+}
+.v-logo:hover .char13:after, .v-logo:hover:after {
+   white-space: nowrap;
+   color: #aaa;
+   position: absolute;
+}
+.v-logo:hover .char13:after {
+   opacity: 0.5;
+   content: '⎇ Fancy.';
+   top: -1em;
+   left: -3.15em;    
+}
+.v-logo:hover:after {
+   opacity: 0.7;
+   content: '↲';
+   right: -1.05em;
+   top: -0.2em;
+}
+​
 
 </style>
 </head>
@@ -78,7 +103,7 @@
 </div>
 <div class="container">
 	<div class="hero-unit">
-		<h1 class="v-logo">vlettering.js</h1>
+		<h1><a href="http://github.com/rlemon/vlettering.js" class="v-logo">vlettering.js</a></h1>
 		<p>
 			A Javascript library for radical web typography!
 		</p>
