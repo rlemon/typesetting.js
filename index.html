@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>vlettering.js - Web Typography Library by Robert Lemon</title>
+<title>typesetting.js - Web Typography Library by Robert Lemon</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -19,66 +19,6 @@
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<style>
-
-@import url(http://fonts.googleapis.com/css?family=Allerta+Stencil);
-
-a.v-logo {
-    color: inherit;
-    text-decoration: none;    
-}
-
-.v-logo {
-    margin: 1em 0;
-    position: relative;
-    display: inline-block;
-    font-family: 'Allerta Stencil', sans-serif;
-    font-weight: 400;
-    border: 2px solid #444;
-    background-color: #f00;
-}
-
-.v-logo span {
-    display: inline-block;
-    height: 1.25em;
-    width: 1em;
-    line-height: 1.1em;
-    text-align: center;
-    -webkit-transition: all 0.3s ease-out;
-}
-
-.v-logo:hover .char2, .v-logo:hover .char3, .v-logo:hover .char4, .v-logo:hover .char5, .v-logo:hover .char6, .v-logo:hover .char7, .v-logo:hover .char13 {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    width: 0.6em;
-    color: #000;
-    cursor: hover;
-}
-.v-logo:hover .char1, .v-logo:hover .char8, .v-logo:hover .char9, .v-logo:hover .char10, .v-logo:hover .char11, .v-logo:hover .char12 {
-    -moz-transform: scale(0);
-    -webkit-transform: scale(0);
-    width: 0.02em;
-}
-.v-logo:hover .char13:after, .v-logo:hover:after {
-   white-space: nowrap;
-   color: #aaa;
-   position: absolute;
-}
-.v-logo:hover .char13:after {
-   opacity: 0.5;
-   content: '⎇ Fancy.';
-   top: -1em;
-   left: -3.1em;    
-}
-.v-logo:hover:after {
-   opacity: 0.7;
-   content: '↲';
-   right: -1.05em;
-   top: -0.2em;
-}
-​
-
-</style>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -89,12 +29,12 @@ a.v-logo {
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="https://github.com/rlemon/vlettering.js">vlettering.js on GitHub</a>
+			<span class="brand">TypeSetting.js</a>
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li><a href="#usage">Usage</a></li>
-					<li><a href="demos.html">Demos</a></li>
+					<li><a href="examples.html">Examples</a></li>
 					<li><a href="#source">Source</a></li>
 				</ul>
 			</div>
@@ -103,48 +43,67 @@ a.v-logo {
 </div>
 <div class="container">
 	<div class="hero-unit">
-		<h1><a href="http://github.com/rlemon/vlettering.js" class="v-logo">vlettering.js</a></h1>
+		<h1><a href="http://github.com/rlemon/typesetting.js" class="v-logo">typesetting.js</a></h1>
 		<p>
 			A Javascript library for radical web typography!
 		</p>
 		<p>
-			Typography on the web is becoming more of a focus with newer technologies arising (new devices, CSS3, HTML5). There have been attempts to circumvent a lack of down-to-the-letter control, but all are lacking key options and require large third-party libraries or scripts to run.
-		</p>
-		<p>
-			This was the reasoning for creating <abbr title="Vanilla Lettering.js">vlettering.js</abbr>, a light-weight, cross-browser, standalone javascript library that exposes web typography like it has never been before!
+			Typography on the web is becoming more of a focus with newer technologies arising (new devices, CSS3, HTML5). There have been attempts to circumvent a lack of down-to-the-letter control, but all are lacking key options and require large third-party libraries or scripts to run. This was the reasoning for creating <abbr title="Vanilla Lettering.js">vlettering.js</abbr>, a light-weight, cross-browser, standalone javascript library that exposes web typography like it has never been before!
 		</p>
 		<p>
 			<a class="btn btn-primary btn-large">Learn more &raquo;</a>
 		</p>
 	</div>
 	<div class="row">
-		<div class="span4">
-			<h2>Heading</h2>
+		<div class="span3">
+			<h2>Kerning Type</h2>
 			<p>
 				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
 			</p>
 			<p>
-				<a class="btn" href="#">View details &raquo;</a>
+				<a class="btn" href="#">View examples &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
-			<h2>Heading</h2>
+		<div class="span3">
+			<h2>Editorial Design</h2>
 			<p>
 				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
 			</p>
 			<p>
-				<a class="btn" href="#">View details &raquo;</a>
+				<a class="btn" href="#">View examples &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
-			<h2>Heading</h2>
+		<div class="span3">
+			<h2>Manageable Code</h2>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				<a class="btn" href="#">View examples &raquo;</a>
+			</p>
+		</div>
+		<div class="span3">
+			<h2>Complete Control</h2>
 			<p>
 				Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 			</p>
 			<p>
-				<a class="btn" href="#">View details &raquo;</a>
+				<a class="btn" href="#">View examples &raquo;</a>
 			</p>
 		</div>
+	</div>
+	<div class="row">
+		<a name="usage"></a>
+		<h2>Usage</h2>
+		<p>Usage is pretty simple, Just include the typesetting.js and Sizzle<sup><a href="#footnotes">†</a></sup> and you can start controlling your text like a boss!</p>
+		<p>
+			Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+		</p>
+		<pre class="prettyprint linenums">
+typesetting.letter('.title');
+typesetting.words('.menu');
+typesetting.lines('.paragraph');
+		</pre>
 	</div>
 	<hr>
 	<footer>
@@ -156,9 +115,9 @@ a.v-logo {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Sizzle.js"></script>
-<script src="js/vlettering.js"></script>
+<script src="js/typesetting.js"></script>
 <script>
-	vlettering.letters('.v-logo');
+	typesetting.letters('.v-logo');
 </script>
 </body>
 </html>
