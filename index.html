@@ -103,8 +103,8 @@ body {
 				<ul class="nav">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li><a href="#usage">Usage</a></li>
-					<li><a href="examples.html">Examples</a></li>
 					<li><a href="#source">Source</a></li>
+					<li><a href="examples.html">Examples</a></li>
 				</ul>
 			</div>
 		</div>
@@ -168,16 +168,40 @@ body {
 	<a name="usage"></a>
 	<div class="row">
 		<div class="span12 well">
-			<h2>Usage</h2>
-			<p>Usage is pretty simple, Just include the typesetting.js and Sizzle<sup><a href="#footnotes">†</a></sup> and you can start controlling your text like a boss!</p>
+			<h2>Usage <small>not to be confused with Unicorns</small></h2>
+			<p>Usage is pretty simple, Just include the typesetting.js and Sizzle<sup><a href="#footnotes">†1</a></sup> and you can start controlling your text like a boss!</p>
 			<p>
-				Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				typesetting.js splits up your text into easy to control span elements with simple incremental classes.
 			</p>
-<pre class="prettyprint">
-typesetting.letter('.title');
-typesetting.words('.menu');
-typesetting.lines('.paragraph');
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;Hello World!&lt;/h1&gt;
+&lt;script&gt;
+typesetting.letters('.title-text');
+&lt;/script&gt;
 </pre>
+			<p>will produce</p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;
+	&lt;span class="char1"&gt;H&lt;/span&gt;
+	&lt;span class="char2"&gt;e&lt;/span&gt;
+	&lt;span class="char3"&gt;l&lt;/span&gt;
+	&lt;span class="char4"&gt;l&lt;/span&gt;
+	&lt;span class="char5"&gt;o&lt;/span&gt;
+	&lt;span class="char6"&gt;&lt;/span&gt;
+	&lt;span class="char7"&gt;W&lt;/span&gt;
+	&lt;span class="char8"&gt;o&lt;/span&gt;
+	&lt;span class="char9"&gt;r&lt;/span&gt;
+	&lt;span class="char10"&gt;l&lt;/span&gt;
+	&lt;span class="char11"&gt;d&lt;/span&gt;
+	&lt;span class="char12"&gt;!&lt;/span&gt;
+&lt;/h1&gt;
+</pre>
+			<h3 style="display: inline-block;">Functions<small> for you to work with:</small></h3>
+			<p>
+				<code>typesetting.letters(selector);</code> will split the text up by letter, treating whitespace as a letter.  Classname: <strong>char</strong><em>1</em><br />
+				<code>typesetting.words(selector);</code> will split the text up by word.<sup><a href="#footnotes">†2</a></sup>  Classname: <strong>word</strong><em>2</em><br />
+				<code>typesetting.lines(selector);</code> will split the text up by line on the <code class="prettyprint lang-html">&lt;br /&gt;</code> tag. Classname: <strong>line</strong><em>3</em><br />
+			</p>
 		</div>
 	</div>
 	<hr>
@@ -188,7 +212,6 @@ typesetting.lines('.paragraph');
 			<p>
 <pre class="prettyprint">
 var typesetting = (function() {
-
     function injector(t, splitter, klass, after) {
         var a = (t.innerText || t.textContent),
             inject = '';
@@ -200,7 +223,6 @@ var typesetting = (function() {
             t.innerHTML = inject; 
         }
     }
-
     function replaceNodeWith(element, search, replace) {
         var elements = element.childNodes;
         for (var i = 0, l = elements.length; i < l; i++) {
@@ -209,7 +231,6 @@ var typesetting = (function() {
             }
         }
     }
-
     var typesetting = {
         letters: function(queryString, context) {
             context = context || document;
@@ -237,10 +258,8 @@ var typesetting = (function() {
             });
             return elements;
         }
-    };
-    
+    };  
     return typesetting;
-    
 })();
 </pre>
 			</p>
@@ -251,7 +270,8 @@ var typesetting = (function() {
 		<div class="span12 well">
 			<a name="footnotes"></a>
 			<h6>Footnotes</h6>
-			<p><small><strong>†:</strong> Sizzle dependancy will be removed in the next version.</small></p>
+			<p><small><strong>1:</strong> Sizzle dependancy will be removed in the next version.</small></p>
+			<p><small><strong>2:</strong> Whitespace by default is not retained between the words however this can easily be modified by changing the <em>after</em> parameter in the <code>words()</code> function.</small></p>
 		</div>
 	</div>
 	<hr>
