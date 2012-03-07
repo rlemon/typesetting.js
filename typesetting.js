@@ -1,45 +1,21 @@
 /*
  * @filename    typesetting.js
  * @author      Robert Lemon
- * @version     1.1
- * @modified    2012/03/07
+ * @version     1.0
+ * @modified    2012/03/05
  * @url         http://rlemon.github.com/typesetting.js/
  * @email       rob.lemon@gmail.com
  * 
  * */
 var typesetting = (function() {
 
-    function injector(t, splitter, klass, after, runner, reset) {
+    function injector(t, splitter, klass, after) {
         var a = (t.innerText || t.textContent),
-            inject = '',
-            runner = runner || false, 
-            reset = reset || false,
-            i = 1,
-            run_up = true;
+            inject = '';
         a = a.split(splitter);
         if (a.length) {
-            a.forEach(function(item) {
-                inject += '<span class="' + klass + i + '">' + item + '</span>' + after;
-                if( !!runner && !reset ) {
-                    if( run_up && i < runner ) {
-                        i++;
-                    } else if( run_up && i >= runner ) {
-                        run_up = false;
-                        i--;
-                    } else if( !run_up && i > 1 ) {
-                        i--;
-                    } else {
-                        run_up = true;
-                        i++;
-                    }
-                } else if( !!reset && !runner ) {
-                    i = i < reset ? i+1 : 1;
-                } else if( !reset && !runner ) {
-                    i++;
-                } else {
-                    throw('Error: Cannot set property runner and reset');
-                    return;
-                }
+            a.forEach(function(item, i) {
+                inject += '<span class="' + klass + (i + 1) + '">' + item + '</span>' + after;
             });
             t.innerHTML = inject; 
         }
@@ -54,35 +30,30 @@ var typesetting = (function() {
         }
     }
 
-    function collectElements(queryString, context) { // setup for later on
-        context = context || document;
-        return Sizzle(queryString, context);
-    }
-
     var typesetting = {
-        letters: function(queryString, options) {
-            options = options || {};
-            var elements = collectElements(queryString);
+        letters: function(queryString, context) {
+            context = context || document;
+            var elements = Sizzle(queryString, context);
             elements.forEach(function(item) {
-                injector(item, '', (options.baseClass || 'char'), (options.after || ''), (options.runner || false), (options.reset || false));
+                injector(item, '', 'char', '');
             });
             return elements;
         },
-        lines: function(queryString, options) {
-            options = options || {};
-            var elements = collectElements(queryString);
+        lines: function(queryString, context) {
+            context = context || document;
+            var elements = Sizzle(queryString, context);
             elements.forEach(function(item) {
                 var r = "eefec303079ad17405c889e092e105b0";
                 replaceNodeWith(item, 'BR', r);
-                injector(item, r, (options.baseClass || 'line'), (options.after || ''), (options.runner || false), (options.reset || false));
+                injector(item, r, 'line', '');
             });
             return elements;
         },
-        words: function(queryString, options) {
-            options = options || {};
-            var elements = collectElements(queryString);
+        words: function(queryString, context) {
+            context = context || document;
+            var elements = Sizzle(queryString, context);
             elements.forEach(function(item) {
-                injector(item, ' ', (options.baseClass || 'word'), (options.after || ''), (options.runner || false), (options.reset || false));
+                injector(item, ' ', 'word', '');
             });
             return elements;
         }
