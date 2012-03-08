@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>typesetting.js - Web Typography Library by Robert Lemon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="typesetting.js - Web Typography Library by Robert Lemon">
+<meta name="author" content="Robert Lemon">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<style>
+
+.hero-unit {
+	padding-bottom: 1em;
+}
+.pad-top {
+	padding-top: 1em;
+}
+.jump-links {
+	margin-top: -0.4em;
+	color: #999;
+}
+
+.modwell {
+	margin-bottom: 1.3em;
+}
+
+h2 a, h2 a:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+</style>
+
+</head>
+<body>
+<div class="navbar navbar-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="http://github.com/rlemon/typesetting.js">typesetting.js</a>
+			<ul class="nav">
+				<li ><a href="index.html">Home</a></li>
+				<li ><a href="about.html">About</a></li>
+				<li ><a href="demos.html">Demos</a></li>
+				<li class="active" ><a href="usage.html">Usage</a></li>
+				<li ><a href="source.html">Source</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="hero-unit">
+		<h1 class="modtitle">Usage Guide <small>just a peek...</small></h1>
+		<p class="pad-top">This usage guide will get you off the ground, and show you how simple it can be to use typesetting.js</p>
+		<p>For a full usage guide including scenarios and examples, please refer to the <a href="">Wiki</a>.</p>
+		<h3 class="pad-top"><small>Jump To:</small></h3>
+		<p class="jump-links">
+			<a href="#overview">Overview</a> |
+			<a href="#methods">Methods</a> |
+			<a href="#options">Options</a>
+		</p>
+	</div>
+
+	<div class="row modwell">
+		<div class="span11">
+			<h2><a name="overview">Overview</a></h2>
+			<p>in progress... check back soon.</p>
+		</div>
+	</div>
+
+	<div class="row modwell">
+		<div class="span11">
+			<h2><a name="methods">Methods</a></h2>
+			<p>There are three methods available for you to work with in typesetting.js</p>
+			<h3>typesetting.letters( selector <small>[, options]</small> )</h3>
+			<p>The <code>letters()</code> method will parse all elements returned by the selector search and wrap each child character with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>char</strong><em>i</em> <small>(where 'i' is the index of the character, starting with one '1')</small>.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;Hello World!&lt;/h1&gt;
+&lt;script&gt;
+typesetting.letters('.title-text');
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;
+	&lt;span class="char1"&gt;H&lt;/span&gt;
+	&lt;span class="char2"&gt;e&lt;/span&gt;
+	&lt;span class="char3"&gt;l&lt;/span&gt;
+	&lt;span class="char4"&gt;l&lt;/span&gt;
+	&lt;span class="char5"&gt;o&lt;/span&gt;
+	&lt;span class="char6"&gt;&lt;/span&gt;
+	&lt;span class="char7"&gt;W&lt;/span&gt;
+	&lt;span class="char8"&gt;o&lt;/span&gt;
+	&lt;span class="char9"&gt;r&lt;/span&gt;
+	&lt;span class="char10"&gt;l&lt;/span&gt;
+	&lt;span class="char11"&gt;d&lt;/span&gt;
+	&lt;span class="char12"&gt;!&lt;/span&gt;
+&lt;/h1&gt;
+</pre>
+			<h3>typesetting.words( selector <small>[, options]</small> )</h3>
+			<p>The <code>lines()</code> method will parse all elements returned by the selector search and wrap each child word (seperated by a space ' ') with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>word</strong><em>i</em> <small>(where 'i' is the index of the word, starting with one '1')</small>.</p>
+			<p>It is important to note, by default all whitespaces between words are removed. This can be overrode by the 'after' option.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;Hello Type Setting Dot JS&lt;/h1&gt;
+&lt;script&gt;
+typesetting.letters('.title-text');
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;
+	&lt;span class="word1"&gt;Hello&lt;/span&gt;
+	&lt;span class="word2"&gt;Type&lt;/span&gt;
+	&lt;span class="word3"&gt;Setting&lt;/span&gt;
+	&lt;span class="word4"&gt;Dot&lt;/span&gt;
+	&lt;span class="word5"&gt;JS&lt;/span&gt;
+&lt;/h1&gt;
+</pre>
+			
+			
+			<h3>typesetting.lines( selector <small>[, options]</small> )</h3>
+			<p>in progress... check back soon.</p>
+		</div>
+	</div>
+
+	<div class="row modwell">
+		<div class="span11">
+			<h2><a name="options">Options</a></h2>
+			<p>in progress... check back soon.</p>
+		</div>
+	</div>
+
+	<footer>
+		<p class="pull-left">&copy; rlemon.com 2012</p>
+		<p class="pull-right">Keep upto date <a href="http://blog.rlemon.com">blog</a> / <a href="http://twitter.com/thegreatrupert">twitter</a> / <a href="http://github.com/rlemon">github</a> </p>
+	</footer>
+
+</div> 
+
+<script src="js/Sizzle.js"></script>
+<script src="js/typesetting.js"></script>
+
+<script>
+// typesetting transform logo
+typesetting.letters('#logo');
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29836157-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
