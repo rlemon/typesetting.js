@@ -4,8 +4,7 @@ html {
 
 body {
 	padding-top: 40px;
-	background: url('../img/background2.png'),
-				url('../img/background.png') repeat-x;
+	background: #474b4f url('../img/background2.png') repeat;
 }
 footer {
 	padding-top: 0.2em;
