@@ -62,3 +62,11 @@ var typesetting = (function() {
     return typesetting;
     
 })();
+
+typesetting.lines('.para', {
+	baseClass: 'n-lines',
+	runner: 2
+});
+typesetting.words('.n-lines2', { reset: 3 });
+typesetting.letters('.word1, .word3', { after: ' ' });
+

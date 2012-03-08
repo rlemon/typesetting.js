@@ -4,11 +4,14 @@
 <meta charset="utf-8">
 <title>typesetting.js - Web Typography Library by Robert Lemon</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="typesetting.js - Web Typography Library by Robert Lemon">
+<meta name="author" content="Robert Lemon">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="google-code-prettify/prettify.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
 <style type="text/css">
+/***************
+ * PAGE BANNER *
+ ***************/
 @font-face {
   font-family: 'Monoton';
   font-style: normal;
@@ -16,36 +19,31 @@
   src: local('Monoton'), local('Monoton-Regular'), url('http://themes.googleusercontent.com/static/fonts/monoton/v3/AKI-lyzyNHXByGHeOcds_w.woff') format('woff');
 }
 
-body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-}
-.banner {
-	position: relative;
-}
 #logo {
 	display: block;
 	min-width: 900px;
     text-align: center;
     font-family: 'Monoton', cursive;
     font-weight: 400;
-    font-size: 1.3em;
+    font-size: 2.2em;
     color: #d7ceb2;
     text-shadow: 3px 3px 0px #282a33, 5px 5px 0px #464959;
     letter-spacing: 10px;
     background-color: #525668;
-    padding: 1em 0;
+    padding: 0.75em 0;
     border: 6px solid #aaa;
+    border-radius: 7px;
 }
 #logo span {
     -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 	display: inline-block;
 }
 .banner img {
 	-webkit-transition: all 0.6s ease-out 0.33s;
+	-moz-transition: all 0.6s ease-out 0.33s;
 	opacity: 0;
 }
-
 .banner:hover .char10, .banner:hover .char13 {
     letter-spacing: 0;
 }
@@ -82,212 +80,80 @@ body {
 }
 ​
 </style>
-<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
 </head>
-<body onload="prettyPrint()">
-<div class="navbar navbar-fixed-top">
+<body>
+<div class="navbar navbar-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</a>
-			<span class="brand">TypeSetting.js</span>
-			<div class="nav-collapse">
-				<ul class="nav">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="#usage">Usage</a></li>
-					<li><a href="#source">Source</a></li>
-					<li><a href="examples.html">Examples</a></li>
-				</ul>
-			</div>
+			<a class="brand" href="http://github.com/rlemon/typesetting.js">typesetting.js</a>
+			<ul class="nav">
+				<li class="active" ><a href="index.html">Home</a></li>
+				<li ><a href="demos.html">Demos</a></li>
+				<li ><a href="#">Usage</a></li>
+				<li ><a href="#">Source</a></li>
+			</ul>
 		</div>
 	</div>
 </div>
+
 <div class="container">
+
+	<h1 class="banner">
+		<a href="http://github.com/rlemon/typesetting.js">
+			<span id="logo">typesetting.js</span>
+			<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/ce742187c818c67d98af16f96ed21c00160c234a/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
+		</a>
+	</h1>
+
 	<div class="hero-unit">
-		<h1 class="banner"><a href="http://github.com/rlemon/typesetting.js"><span id="logo">typesetting.js</span>
-		<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/ce742187c818c67d98af16f96ed21c00160c234a/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
-		</a></h1>
-		<br />
-		<p>
-			A Javascript library for radical web typography!
-		</p>
-		<p>
-			Type Setting is exploding all over the web but CSS currently doesn't offer complete down-to-the-letter control. So we created a light-weight javascript library to give you that control...
-		</p>
-		<p>
-			<a class="btn btn-small">Submit a banner &raquo;</a>
-		</p>
+		<h1 class="modtitle">TypeSetting.js <small>a Javascript library for radical web typography!</small></h1>
+		<p style="padding-top: 1em;">Type Setting is exploding all over the web but CSS currently doesn't offer complete down-to-the-letter control. So we created a light-weight javascript library to give you that control...</p>
+		<p><a href="about" class="btn btn-large btn-primary">Learn more &raquo;</a></p>
 	</div>
-	<div class="row">
+
+	<div class="row modwell">
 		<div class="span3">
-			<h2>Kerning Type</h2>
-			<p>
-				In typography, kerning is the process of adjusting the spacing between characters in a proportional font; the adjustment of the space between individual letter forms vs. <em>tracking</em> which is the uniform adjustment of spacing applied over a range of characters.
-			</p>
-			<p>
-				<a class="btn" href="#">Learn How &raquo;</a>
-			</p>
+			<h2>Demos</h2>
+			<a href="#" class="thumbnail"><img src="img/demo-thumb.png" alt=""></a>
+			<p>Here is a collection of example content users have come up with using typesetting.js; If you have an example, demo, or banner and you would like to showcase here you can <a href="#">contact me</a> for information. </p>
+			<p><a class="btn" href="sites">View Demos &raquo;</a></p>
 		</div>
+		<div class="span1">&nbsp;</div>
 		<div class="span3">
-			<h2>Editorial Design</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. What to write here?
-			</p>
-			<p>
-				<a class="btn" href="#">View examples &raquo;</a>
-			</p>
+			<h2>Usage</h2>
+			<a href="#" class="thumbnail"><img src="img/usage-thumb-dark.png" alt=""></a>
+			<p>There are many ways to use this library, and I hope to show you some of the power typesetting.js can bring to your website or application. For full details and usage guide see the <a href="#">Wiki</a> or check out some of the <a href="#">Examples</a>.</p>
+			<p><a class="btn" href="tutorials">View Usage &raquo;</a></p>
 		</div>
+		<div class="span1">&nbsp;</div>
 		<div class="span3">
-			<h2>Manageable Code</h2>
-			<p>
-				No pseudo-selector crazieness <code class="prettyprint lang-css">div>h1:nth-child(11):nth-of-type(2)</code>, just plan for a very structured, very organized way of thinking. A smart CSS developer will be able to write small, stunning visual displays.
-			</p>
-			<p>
-				<a class="btn" href="#">Read the Wiki &raquo;</a>
-			</p>
-		</div>
-		<div class="span3">
-			<h2>Complete Control</h2>
-			<p>
-				I don't need no stinkin' <code class="prettyprint lang-html">&lt;canvas&gt;</code> to make my Website epic! Flash?! How dare you even mention it! Give me word, line, and down-to-the-letter control and I will give you a masterpeice.
-			</p>
-			<p>
-				<a class="btn" href="#">Provide Feedback &raquo;</a>
-			</p>
+			<h2>Source</h2>
+			<a href="#" class="thumbnail"><img src="img/source-thumb.png" alt=""></a>
+			<p>See all the code that makes typesetting.js possible and the differences between each version/revision. 
+			Everything, including demo content is available for download or fork via <a href="https://github.com/rlemon/typesetting.js">Github</a>.</p>
+			<p><a class="btn" href="code">View Source &raquo;</a></p>
 		</div>
 	</div>
-	<hr>
-	<a name="usage"></a>
-	<div class="row">
-		<div class="span12 well">
-			<h2>Usage <small>not to be confused with Unicorns</small></h2>
-			<p>Usage is pretty simple, Just include the typesetting.js and Sizzle<sup><a href="#footnotes">†1</a></sup> and you can start controlling your text like a boss!</p>
-			<p>
-				typesetting.js splits up your text into easy to control span elements with simple incremental classes.
-			</p>
-<pre class="prettyprint lang-html">
-&lt;h1 class="title-text"&gt;Hello World!&lt;/h1&gt;
-&lt;script&gt;
-typesetting.letters('.title-text');
-&lt;/script&gt;
-</pre>
-			<p>will produce</p>
-<pre class="prettyprint lang-html">
-&lt;h1 class="title-text"&gt;
-	&lt;span class="char1"&gt;H&lt;/span&gt;
-	&lt;span class="char2"&gt;e&lt;/span&gt;
-	&lt;span class="char3"&gt;l&lt;/span&gt;
-	&lt;span class="char4"&gt;l&lt;/span&gt;
-	&lt;span class="char5"&gt;o&lt;/span&gt;
-	&lt;span class="char6"&gt;&lt;/span&gt;
-	&lt;span class="char7"&gt;W&lt;/span&gt;
-	&lt;span class="char8"&gt;o&lt;/span&gt;
-	&lt;span class="char9"&gt;r&lt;/span&gt;
-	&lt;span class="char10"&gt;l&lt;/span&gt;
-	&lt;span class="char11"&gt;d&lt;/span&gt;
-	&lt;span class="char12"&gt;!&lt;/span&gt;
-&lt;/h1&gt;
-</pre>
-			<h3 style="display: inline-block;">Functions<small> for you to work with:</small></h3>
-			<p>
-				<code>typesetting.letters(selector);</code> will split the text up by letter, treating whitespace as a letter.  Classname: <strong>char</strong><em>1</em><br />
-				<code>typesetting.words(selector);</code> will split the text up by word.<sup><a href="#footnotes">†2</a></sup>  Classname: <strong>word</strong><em>2</em><br />
-				<code>typesetting.lines(selector);</code> will split the text up by line on the <code class="prettyprint lang-html">&lt;br /&gt;</code> tag. Classname: <strong>line</strong><em>3</em><br />
-			</p>
-		</div>
-	</div>
-	<hr>
-	<a name="source"></a>
-	<div class="row">
-		<div class="span12">
-			<h2><small style="margin-left: -1.9em;">use </small>The Source <small>Luke</small></h2>
-			<p>
-<pre class="prettyprint">
-var typesetting = (function() {
-    function injector(t, splitter, klass, after) {
-        var a = (t.innerText || t.textContent),
-            inject = '';
-        a = a.split(splitter);
-        if (a.length) {
-            a.forEach(function(item, i) {
-                inject += '<span class="' + klass + (i + 1) + '">' + item + '</span>' + after;
-            });
-            t.innerHTML = inject; 
-        }
-    }
-    function replaceNodeWith(element, search, replace) {
-        var elements = element.childNodes;
-        for (var i = 0, l = elements.length; i < l; i++) {
-            if (elements[i].tagName === search) {
-                element.replaceChild(document.createTextNode(replace), elements[i]);
-            }
-        }
-    }
-    var typesetting = {
-        letters: function(queryString, context) {
-            context = context || document;
-            var elements = Sizzle(queryString, context);
-            elements.forEach(function(item) {
-                injector(item, '', 'char', '');
-            });
-            return elements;
-        },
-        lines: function(queryString, context) {
-            context = context || document;
-            var elements = Sizzle(queryString, context);
-            elements.forEach(function(item) {
-                var r = "eefec303079ad17405c889e092e105b0";
-                replaceNodeWith(item, 'BR', r);
-                injector(item, r, 'line', '');
-            });
-            return elements;
-        },
-        words: function(queryString, context) {
-            context = context || document;
-            var elements = Sizzle(queryString, context);
-            elements.forEach(function(item) {
-                injector(item, ' ', 'word', '');
-            });
-            return elements;
-        }
-    };  
-    return typesetting;
-})();
-</pre>
-			</p>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="span12 well">
-			<a name="footnotes"></a>
-			<h6>Footnotes</h6>
-			<p><small><strong>1:</strong> Sizzle dependancy will be removed in the next version.</small></p>
-			<p><small><strong>2:</strong> Whitespace by default is not retained between the words however this can easily be modified by changing the <em>after</em> parameter in the <code>words()</code> function.</small></p>
-		</div>
-	</div>
-	<hr>
+
 	<footer>
-	<p>
-		&copy; <a href="http://rlemon.com">rlemon.com</a> 2012
-	</p>
+		<p class="pull-left">&copy; rlemon.com 2012</p>
+		<p class="pull-right">Keep upto date <a href="http://blog.rlemon.com">blog</a> / <a href="http://twitter.com/thegreatrupert">twitter</a> / <a href="http://github.com/rlemon">github</a> </p>
 	</footer>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
+</div> 
+
 <script src="js/Sizzle.js"></script>
 <script src="js/typesetting.js"></script>
-<script src="google-code-prettify/prettify.js"></script>
+
 <script>
-	typesetting.letters('#logo');
+// typesetting transform logo
+typesetting.letters('#logo');
 </script>
+
 </body>
 </html>
