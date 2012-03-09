@@ -69,15 +69,24 @@ h2 a, h2 a:hover {
 	</div>
 
 	<div class="row modwell">
-		<div class="span11">
-			<h2><a name="overview">Overview</a></h2>
-			<p>in progress... check back soon.</p>
+		<div class="span11 modhero">
+			<h2><a name="overview">Overview</a> <a href="#"><small>⇡ top</small></a></h2>
+			<p class="important">Getting started with typesetting.js is as simple as<br />
+			<ol class="important">
+				<li>Include typesetting.js on your page</li>
+				<li>Include Sizzle on your page</li>
+				<li>Use typesetting.<em>method( selector [, options ] )</em> and start controlling your text like a Boss!</li>
+			</ol>
+			<small>(for best performance I suggest you place the <code>&lt;script&gt;</code> tags just before the <code>&lt;/body&gt;</code> tag)</small>
+			</p>
+			
+			<p>Version 1.2 will not have a third party dependancy on Sizzle, and will function the exact same as the current version. So upgrading from 1.1 to 1.2 will be a breeze.</p>
 		</div>
 	</div>
 
 	<div class="row modwell">
 		<div class="span11">
-			<h2><a name="methods">Methods</a></h2>
+			<h2><a name="methods">Methods</a> <a href="#"><small>⇡ top</small></a></h2>
 			<p>There are three methods available for you to work with in typesetting.js</p>
 			<h3>typesetting.letters( selector <small>[, options]</small> )</h3>
 			<p>The <code>letters()</code> method will parse all elements returned by the selector search and wrap each child character with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>char</strong><em>i</em> <small>(where 'i' is the index of the character, starting with one '1')</small>.</p>
@@ -146,8 +155,129 @@ typesetting.lines('.gnr-text');
 
 	<div class="row modwell">
 		<div class="span11">
-			<h2><a name="options">Options</a></h2>
+			<h2><a name="options">Options</a> <a href="#"><small>⇡ top</small></a></h2>
 			<p>in progress... check back soon.</p>
+			
+			
+			
+			<h3>baseClass</h3>
+			<p>This option allows you to change the default classname for the <code>&lt;span&gt;</code> element when the typesetting method is applied.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;Hello World!&lt;/h1&gt;
+&lt;script&gt;
+typesetting.letters('.title-text', {
+	baseClass: 'foo'
+});
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;
+	&lt;span class="foo1"&gt;H&lt;/span&gt;
+	&lt;span class="foo2"&gt;e&lt;/span&gt;
+	&lt;span class="foo3"&gt;l&lt;/span&gt;
+	&lt;span class="foo4"&gt;l&lt;/span&gt;
+	&lt;span class="foo5"&gt;o&lt;/span&gt;
+	&lt;span class="foo6"&gt;&lt;/span&gt;
+	&lt;span class="foo7"&gt;W&lt;/span&gt;
+	&lt;span class="foo8"&gt;o&lt;/span&gt;
+	&lt;span class="foo9"&gt;r&lt;/span&gt;
+	&lt;span class="foo10"&gt;l&lt;/span&gt;
+	&lt;span class="foo11"&gt;d&lt;/span&gt;
+	&lt;span class="foo12"&gt;!&lt;/span&gt;
+&lt;/h1&gt;
+</pre>
+			<p>The <em>baseClass</em> option only accepts <em><strong>strings</strong></em>, and can be applied in conjunction with any of the other options.</p>
+			
+			<hr />
+			<h3>after</h3>
+			<p>The <em>after</em> option lets you control what the <em>Injector</em> inserts after the <code>&lt;span&gt;</code> element before it returns it to the document.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;Hello Type Setting Dot JS&lt;/h1&gt;
+&lt;script&gt;
+typesetting.words('.title-text', {
+	after: '&amp;nbsp;' // or ' '
+});
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;h1 class="title-text"&gt;
+	&lt;span class="word1"&gt;Hello&lt;/span&gt;&amp;nbsp;
+	&lt;span class="word2"&gt;Type&lt;/span&gt;&amp;nbsp;
+	&lt;span class="word3"&gt;Setting&lt;/span&gt;&amp;nbsp;
+	&lt;span class="word4"&gt;Dot&lt;/span&gt;&amp;nbsp;
+	&lt;span class="word5"&gt;JS&lt;/span&gt;&amp;nbsp;
+&lt;/h1&gt;
+</pre>
+			<p>The <em>after</em> option accepts <em><strong>strings</strong></em>, and can be applied in conjunction with any of the other options.</p>
+
+			<hr />
+			<h3>reset</h3>
+			<p>The <em>reset</em> option controls the numeric value appended to the classname for the <code>&lt;span&gt;</code> element. Specifically this option lets you set the <em>limit</em> upon which the numeric value <em>resets</em> back to one (1). </p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="para-text"&gt;
+	Never gonna give you up&lt;br /&gt;
+	Never gonna let you down&lt;br /&gt;
+	Never gonna run around and desert you&lt;br /&gt;
+	Never gonna make you cry&lt;br /&gt;
+	Never gonna say goodbye&lt;br /&gt;
+	Never gonna tell a lie and hurt you
+&lt;/p&gt;
+&lt;script&gt;
+typesetting.lines('.para-text', {
+	reset: 3
+});
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="para-text"&gt;
+	&lt;span class="line1"&gt;Never gonna give you up&lt;/span&gt;
+	&lt;span class="line2"&gt;Never gonna let you down&lt;/span&gt;
+	&lt;span class="line3"&gt;Never gonna run around and desert you&lt;/span&gt;
+	&lt;span class="line1"&gt;Never gonna make you cry&lt;/span&gt;
+	&lt;span class="line2"&gt;Never gonna say goodbye&lt;/span&gt;
+	&lt;span class="line3"&gt;Never gonna tell a lie and hurt you&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+			<p>The <em>reset</em> option accepts <em><strong>numeric</strong></em> values, and <strong>cannot</strong> be applied in conjunction with <em>runner</em>.</p>
+			
+			<hr />
+			<h3>runner</h3>
+			<p>The <em>runner</em> option functions almost exactly the same as the <em>reset</em> option. However instead of <em>resetting</em> the value once the <em>limit</em> is hit, the numeric value appeneded to the classname starts to decline back to one (1) then increase back to the <em>limit</em>.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="para-text"&gt;
+	Never gonna give you up&lt;br /&gt;
+	Never gonna let you down&lt;br /&gt;
+	Never gonna run around and desert you&lt;br /&gt;
+	Never gonna make you cry&lt;br /&gt;
+	Never gonna say goodbye&lt;br /&gt;
+	Never gonna tell a lie and hurt you
+&lt;/p&gt;
+&lt;script&gt;
+typesetting.lines('.para-text', {
+	runner: 3
+});
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="para-text"&gt;
+	&lt;span class="line1"&gt;Never gonna give you up&lt;/span&gt;
+	&lt;span class="line2"&gt;Never gonna let you down&lt;/span&gt;
+	&lt;span class="line3"&gt;Never gonna run around and desert you&lt;/span&gt;
+	&lt;span class="line2"&gt;Never gonna make you cry&lt;/span&gt;
+	&lt;span class="line1"&gt;Never gonna say goodbye&lt;/span&gt;
+	&lt;span class="line2"&gt;Never gonna tell a lie and hurt you&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+			<p>The <em>runner</em> option accepts <em><strong>numeric</strong></em> values, and <strong>cannot</strong> be applied in conjunction with <em>reset</em>.</p>
+			
 		</div>
 	</div>
 
