@@ -8,7 +8,7 @@
 <meta name="author" content="Robert Lemon">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/site.css" rel="stylesheet">
-
+<link href="google-code-prettify/prettify.css" rel="stylesheet">
 <!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -38,14 +38,13 @@ h2 a, h2 a:hover {
 </style>
 
 </head>
-<body>
+<body onload="prettyPrint()">
 <div class="navbar navbar-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="http://github.com/rlemon/typesetting.js">typesetting.js</a>
+			<a class="brand" href="index.html">typesetting.js</a>
 			<ul class="nav">
 				<li ><a href="index.html">Home</a></li>
-				<li ><a href="about.html">About</a></li>
 				<li ><a href="demos.html">Demos</a></li>
 				<li class="active" ><a href="usage.html">Usage</a></li>
 				<li ><a href="source.html">Source</a></li>
@@ -56,17 +55,17 @@ h2 a, h2 a:hover {
 
 <div class="container">
 
-	<div class="hero-unit">
+	<header class="hero-unit">
 		<h1 class="modtitle">Usage Guide <small>just a peek...</small></h1>
 		<p class="pad-top">This usage guide will get you off the ground, and show you how simple it can be to use typesetting.js</p>
-		<p>For a full usage guide including scenarios and examples, please refer to the <a href="">Wiki</a>.</p>
+		<p>For a full usage guide including scenarios and examples, please refer to the <a href="https://github.com/rlemon/typesetting.js/wiki">Wiki</a>.</p>
 		<h3 class="pad-top"><small>Jump To:</small></h3>
 		<p class="jump-links">
 			<a href="#overview">Overview</a> |
 			<a href="#methods">Methods</a> |
 			<a href="#options">Options</a>
 		</p>
-	</div>
+	</header>
 
 	<div class="row modwell">
 		<div class="span11 modhero">
@@ -309,6 +308,6 @@ typesetting.letters('#logo');
   })();
 
 </script>
-
+<script src="google-code-prettify/prettify.js"></script>
 </body>
 </html>

@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Simply Blue - TypeSetting.js demo by mainerror</title>
+  <style type='text/css'>
+    @import url(http://fonts.googleapis.com/css?family=Monoton);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+@-webkit-keyframes flicker {
+    0% {
+        color: #4D8399;
+    }
+    10% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    12% {
+        color: #4D8399;
+    }
+    13% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    14% {
+        color: #4D8399;
+    }
+    15% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    30% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    50% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    55% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    60% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    90% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    100% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+}
+
+@-moz-keyframes flicker {
+    0% {
+        color: #4D8399;
+    }
+    10% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    12% {
+        color: #4D8399;
+    }
+    13% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    14% {
+        color: #4D8399;
+    }
+    15% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    30% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    50% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    55% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    60% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+    90% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+    100% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+}
+
+@-webkit-keyframes perma-flicker {
+    0% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    40% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+
+    45% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    50% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+
+    60% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    100% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+}
+
+@-moz-keyframes perma-flicker {
+    0% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    40% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+
+    45% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    50% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+
+    60% {
+        color: #4D8399;
+        text-shadow: none;
+    }
+
+    100% {
+        color: #00B4FF;
+        text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+    }
+}
+
+body {
+    background-color: #000;
+    background: #000 url(http://line25.com/wp-content/uploads/2009/letterpress/demo/bg.png);
+    color: #4D8399;
+}
+
+#logo {
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    font-weight: 400;
+    font-size: 6.0em;
+    color: #4D8399;
+    letter-spacing: 10px;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-animation-name: flicker;
+    -webkit-animation-duration: 2.0s;
+    -webkit-animation-delay: 2.0s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: flicker;
+    -moz-animation-duration: 2.0s;
+    -moz-animation-delay: 2.0s;
+    -moz-animation-fill-mode: both;
+    -moz-animation-timing-function: steps(1, start);
+}
+
+#logo span:hover {
+    color: #4D8399;
+    text-shadow: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #333333;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+footer a {
+    color: #333333;
+    text-decoration: none;
+    text-transform: none;
+    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.2);
+    -webkit-transition: all 1.0s ease-out;
+    -moz-transition: all 1.0s ease-out;
+}
+
+footer a:hover {
+    color: #00B4FF;
+    text-shadow: 0px 0px 1.0em rgba(0, 180, 255, 1.0),
+                 0px 0px 10.0em rgba(0, 180, 255, 0.5),
+                 1px 0px 2px rgba(0, 180, 255, 1.0),
+                 0px 1px 2px rgba(0, 180, 255, 1.0);
+}
+
+.char5 {
+    color: #4D8399;
+    text-shadow: none;
+}
+
+.char8 {
+    -webkit-animation-name: perma-flicker;
+    -webkit-animation-duration: 4.0s;
+    -webkit-animation-delay: 4.0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: perma-flicker;
+    -moz-animation-duration: 4.0s;
+    -moz-animation-delay: 4.0s;
+    -moz-animation-iteration-count: infinte;
+    -moz-animation-timing-function: steps(1, start);
+}
+
+  </style>
+</head>
+<body>
+  <h1 id="logo">Simply Blue</h1>
+<footer><a href="http://rlemon.github.com/typesetting.js">typesetting.js</a> by <a href="https://twitter.com/#!/TheGreatRupert">@TheGreatRupert</a> | demo by <a href="https://twitter.com/#!/mainerror">@mainerror</a></footer>
+<script type='text/javascript' src="../../js/Sizzle.js"></script>
+<script type='text/javascript' src='../../js/typesetting.js'></script>
+<script type='text/javascript'>
+typesetting.letters('#logo');
+</script>
+</body>
+</html>
+

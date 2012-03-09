@@ -8,92 +8,60 @@
 <meta name="author" content="Robert Lemon">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/site.css" rel="stylesheet">
-<style type="text/css">
-/***************
- * PAGE BANNER *
- ***************/
-@font-face {
-  font-family: 'Monoton';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Monoton'), local('Monoton-Regular'), url('http://themes.googleusercontent.com/static/fonts/monoton/v3/AKI-lyzyNHXByGHeOcds_w.woff') format('woff');
-}
-
-#logo {
-	display: block;
-	min-width: 900px;
-    text-align: center;
-    font-family: 'Monoton', cursive;
-    font-weight: 400;
-    font-size: 2.2em;
-    color: #d7ceb2;
-    text-shadow: 3px 3px 0px #282a33, 5px 5px 0px #464959;
-    letter-spacing: 10px;
-    background-color: #525668;
-    padding: 0.75em 0;
-    border: 6px solid #aaa;
-    border-radius: 7px;
-}
-#logo span {
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-	display: inline-block;
-}
-.banner img {
-	-webkit-transition: all 0.6s ease-out 0.33s;
-	-moz-transition: all 0.6s ease-out 0.33s;
-	opacity: 0;
-}
-.banner:hover .char10, .banner:hover .char13 {
-    letter-spacing: 0;
-}
-.banner:hover .char11 {
-    -moz-transform: scale(1.5) rotate(720deg);
-    -webkit-transform: scale(1.5) rotate(720deg);
-    margin: 0 20px 0 25px;
-}
-.banner:hover .char1, .banner:hover .char7, .banner:hover .char8 {
-    -moz-transform: scale(1.2) translateY(-0.1em);
-    -webkit-transform: scale(1.2) translateY(-0.1em);
-}
-.banner:hover .char6 {
-    -moz-transform: rotate(-9deg) translateY(0.05em);
-    -webkit-transform: rotate(-9deg) translateY(0.05em);
-}
-.banner:hover .char4 {
-    -moz-transform: rotate(12deg) translateY(0.15em);
-    -webkit-transform: rotate(12deg) translateY(0.15em);
-}
-.banner:hover .char3, .banner:hover .char5, .banner:hover .char10 {
-    -moz-transform: translateY(0.15em);
-    -webkit-transform: translateY(0.15em);
-}
-.banner:hover .char2, .banner:hover .char9 {
-    -moz-transform: translateY(-0.1em);
-    -webkit-transform: translateY(-0.1em);
-}
-.banner:hover img {
-	opacity: 1;
-}
-.banner:hover .char1, .banner:hover .char3, .banner:hover .char4, .banner:hover .char5, .banner:hover .char7, .banner:hover .char8, .banner:hover .char11, .banner:hover .char13 {
-     color: #d6a40e;   
-}
-​
-</style>
-
+<link href="google-code-prettify/prettify.css" rel="stylesheet">
 <!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<style>
+
+.hero-unit {
+	padding-bottom: 1em;
+}
+.pad-top {
+	padding-top: 1em;
+}
+.jump-links {
+	margin-top: -0.4em;
+	color: #999;
+}
+
+.modwell {
+	margin-bottom: 1.3em;
+}
+
+h2 a, h2 a:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.modtitle {
+	position: relative;
+}
+
+.modtitle img {
+	margin: -1em 0 0 1em;
+}
+
+.modtitle.alt:before {
+	width: 2em;
+	font-weight: normal;
+	color: #999;
+	font-size: 26px;
+	margin-left: -2em;
+	content: 'use ';
+}
+
+</style>
+
 </head>
-<body>
+<body onload="prettyPrint()">
 <div class="navbar navbar-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="http://github.com/rlemon/typesetting.js">typesetting.js</a>
+			<a class="brand" href="index.html">typesetting.js</a>
 			<ul class="nav">
 				<li ><a href="index.html">Home</a></li>
-				<li ><a href="about.html">About</a></li>
 				<li ><a href="demos.html">Demos</a></li>
 				<li ><a href="usage.html">Usage</a></li>
 				<li class="active" ><a href="source.html">Source</a></li>
@@ -104,42 +72,134 @@
 
 <div class="container">
 
-	<h1 class="banner">
-		<a href="http://github.com/rlemon/typesetting.js">
-			<span id="logo">typesetting.js</span>
-			<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/ce742187c818c67d98af16f96ed21c00160c234a/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
-		</a>
-	</h1>
-
-	<div class="hero-unit">
-		<h1 class="modtitle">TypeSetting.js <small>a Javascript library for radical web typography!</small></h1>
-		<p style="padding-top: 1em;">Type Setting is exploding all over the web but CSS currently doesn't offer complete down-to-the-letter control. That is why we need typesetting.js...</p>
-		<p><a href="#" class="btn btn-large btn-primary">Learn more &raquo;</a></p>
-	</div>
+	<header class="hero-unit">
+		<h1 class="modtitle alt">The Source <small>Luke...</small><img src="img/yoda.png" height="48" width="48" /></h1>
+		<p class="pad-top">Minified versions can be <em>Forked</em> from the GitHub repository or by clicking the <em>Download</em> button below.</p>
+		<hr />
+		<p style="text-align: center;">
+			<a href="https://github.com/rlemon/typesetting.js/" class="btn btn-primary btn-large">View source on GitHub</a> 
+			<a class="btn btn-large" disabled="disabled">Download TypeSetting.js</a>
+		</p>
+	</header>
 
 	<div class="row modwell">
-		<div class="span3">
-			<h2>Demos</h2>
-			<a href="#" class="thumbnail"><img src="img/demo-thumb.png" alt=""></a>
-			<p>Here is a collection of example content users have come up with using typesetting.js; If you have an example, demo, or banner and you would like to showcase here you can <a href="mailto:rob.lemon@gmail.com">contact me</a> for information. </p>
-			<p><a class="btn" href="#">View Demos &raquo;</a></p>
-		</div>
-		<div class="span1">&nbsp;</div>
-		<div class="span3">
-			<h2>Usage</h2>
-			<a href="#" class="thumbnail"><img src="img/usage-thumb-dark.png" alt=""></a>
-			<p>There are many ways to use this library, and I hope to show you some of the power typesetting.js can bring to your website or application. For full details and usage guide see the <a href="https://github.com/rlemon/typesetting.js/wiki">Wiki</a> or check out some of the <a href="#">Examples</a>.</p>
-			<p><a class="btn" href="#">View Usage &raquo;</a></p>
-		</div>
-		<div class="span1">&nbsp;</div>
-		<div class="span3">
-			<h2>Source</h2>
-			<a href="#" class="thumbnail"><img src="img/source-thumb.png" alt=""></a>
-			<p>See all the code that makes typesetting.js possible and the differences between each version/revision. 
-			Everything, including demo content is available for download or fork via <a href="https://github.com/rlemon/typesetting.js">Github</a>.</p>
-			<p><a class="btn" href="#">View Source &raquo;</a></p>
+		<div class="span11 modhero">
+			<h2>typesetting.js <small>version 1.1</small></h2>
+			<p style="text-align: right;">
+				<a href="https://raw.github.com/rlemon/typesetting.js/master/typesetting.js">Raw</a> |
+				<a href="https://github.com/rlemon/typesetting.js/blob/1.1/typesetting.js">Master</a>
+			</p>
+<pre class="prettyprint lang-js">
+var typesetting = (function() {
+
+    function injector(t, splitter, klass, after, runner, reset) {
+        var a = (t.innerText || t.textContent),
+            inject = '',
+            runner = runner || false, 
+            reset = reset || false,
+            i = 1,
+            run_up = true;
+        a = a.split(splitter);
+        if (a.length) {
+            a.forEach(function(item) {
+                inject += '<span class="' + klass + i + '">' + item + '</span>' + after;
+                if( !!runner && !reset ) {
+                    if( run_up && i < runner ) {
+                        i++;
+                    } else if( run_up && i >= runner ) {
+                        run_up = false;
+                        i--;
+                    } else if( !run_up && i > 1 ) {
+                        i--;
+                    } else {
+                        run_up = true;
+                        i++;
+                    }
+                } else if( !!reset && !runner ) {
+                    i = i < reset ? i+1 : 1;
+                } else if( !reset && !runner ) {
+                    i++;
+                } else {
+                    throw('Error: Cannot set property runner and reset');
+                    return;
+                }
+            });
+            t.innerHTML = inject; 
+        }
+    }
+
+    function replaceNodeWith(element, search, replace) {
+        var elements = element.childNodes;
+        for (var i = 0, l = elements.length; i < l; i++) {
+            if (elements[i].tagName === search) {
+                element.replaceChild(document.createTextNode(replace), elements[i]);
+            }
+        }
+    }
+
+    function collectElements(queryString, context) { // setup for later on
+        context = context || document;
+        return Sizzle(queryString, context);
+    }
+
+    var typesetting = {
+        letters: function(queryString, options) {
+            options = options || {};
+            var elements = collectElements(queryString);
+            elements.forEach(function(item) {
+                injector(
+                    item, 
+                    '', 
+                    (options.baseClass || 'char'), 
+                    (options.after || ''), 
+                    (options.runner || false), 
+                    (options.reset || false)
+                );
+            });
+            return elements;
+        },
+        lines: function(queryString, options) {
+            options = options || {};
+            var elements = collectElements(queryString);
+            elements.forEach(function(item) {
+                var r = "eefec303079ad17405c889e092e105b0";
+                replaceNodeWith(item, 'BR', r);
+                injector(
+                    item, 
+                    r, 
+                    (options.baseClass || 'line'), 
+                    (options.after || ''), 
+                    (options.runner || false), 
+                    (options.reset || false)
+                );
+            });
+            return elements;
+        },
+        words: function(queryString, options) {
+            options = options || {};
+            var elements = collectElements(queryString);
+            elements.forEach(function(item) {
+                injector(
+                    item, 
+                    ' ', 
+                    (options.baseClass || 'line'), 
+                    (options.after || ''), 
+                    (options.runner || false), 
+                    (options.reset || false)
+                );
+            });
+            return elements;
+        }
+    };
+    
+    return typesetting;
+    
+})();
+</pre>
+
 		</div>
 	</div>
+
 
 	<footer>
 		<p class="pull-left">&copy; rlemon.com 2012</p>
@@ -169,6 +229,6 @@ typesetting.letters('#logo');
   })();
 
 </script>
-
+<script src="google-code-prettify/prettify.js"></script>
 </body>
 </html>
