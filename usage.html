@@ -106,13 +106,13 @@ typesetting.letters('.title-text');
 &lt;/h1&gt;
 </pre>
 			<h3>typesetting.words( selector <small>[, options]</small> )</h3>
-			<p>The <code>lines()</code> method will parse all elements returned by the selector search and wrap each child word (seperated by a space ' ') with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>word</strong><em>i</em> <small>(where 'i' is the index of the word, starting with one '1')</small>.</p>
+			<p>The <code>words()</code> method will parse all elements returned by the selector search and wrap each child word (seperated by a space ' ') with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>word</strong><em>i</em> <small>(where 'i' is the index of the word, starting with one '1')</small>.</p>
 			<p>It is important to note, by default all whitespaces between words are removed. This can be overrode by the 'after' option.</p>
 			<p><strong>Example:</strong></p>
 <pre class="prettyprint lang-html">
 &lt;h1 class="title-text"&gt;Hello Type Setting Dot JS&lt;/h1&gt;
 &lt;script&gt;
-typesetting.letters('.title-text');
+typesetting.words('.title-text');
 &lt;/script&gt;
 </pre>
 			<p><strong>Outputs:</strong></p>
@@ -125,10 +125,22 @@ typesetting.letters('.title-text');
 	&lt;span class="word5"&gt;JS&lt;/span&gt;
 &lt;/h1&gt;
 </pre>
-			
-			
 			<h3>typesetting.lines( selector <small>[, options]</small> )</h3>
-			<p>in progress... check back soon.</p>
+			<p>The <code>lines()</code> method will parse all elements returned by the selector search and wrap each child line (seperated by a <code>&lt;BR&gt;</code> tag) with a <code>&lt;span&gt;</code> tag. The default className applied to the new element is <strong>line</strong><em>i</em> <small>(where 'i' is the index of the line, starting with one '1')</small>.</p>
+			<p><strong>Example:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="gnr-text"&gt;Welcome to the jungle,&lt;br \&gt;We take it day by day.&lt;/p&gt;
+&lt;script&gt;
+typesetting.lines('.gnr-text');
+&lt;/script&gt;
+</pre>
+			<p><strong>Outputs:</strong></p>
+<pre class="prettyprint lang-html">
+&lt;p class="gnr-text"&gt;
+	&lt;span class="line1"&gt;Welcome to the jungle,&lt;/span&gt;
+	&lt;span class="line2"&gt;We take it day by day.&lt;/span&gt;
+&lt;/p&gt;
+</pre>
 		</div>
 	</div>
 
