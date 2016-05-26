@@ -91,3 +91,7 @@ var typesetting = (function() {
     return typesetting;
     
 })();
+
+if( "undefined" !== typeof module ){
+    module.exports = typesetting;
+}
